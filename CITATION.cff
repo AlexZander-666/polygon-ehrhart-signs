@@ -8,6 +8,7 @@ authors:
     affiliation: East China University of Science and Technology
 date-released: 2026-11-26
 version: "1.0.0"
+doi: "10.5281/zenodo.24554683"
 repository-code: "https://github.com/AlexZander-666/polygon-ehrhart-signs"
 license: Apache-2.0
 keywords:

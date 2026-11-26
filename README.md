@@ -4,6 +4,8 @@ For every convex polygon with $n\ge3$ sides, the order polytope of its complete 
 
 The first example is the convex hull of $(j,j^2)$ for $j=0,\ldots,12$. Use every face, including the empty face and the polygon. The resulting order polytope has dimension 28 and ordinary linear Ehrhart coefficient $-298495711/35302608$. The October 2026 Open Problems Catalog calculation and Mantra Patel's manuscript documented this exact example and minimality through $n=13$. This release gives the classification for all sizes and degrees, uniform estimates, and formal proofs. [Catalog computation](https://github.com/10m-u/open-problems-catalog/blob/ca8d4d44ba3db527f19f28928c240168f545ecfe/solutions/seven-more-2026-10-09/discrete/Q3499-proof.md) · [Patel's manuscript](https://github.com/mantrakp04/research-papers/blob/c0505c4261045f1ab5760a024f1dfc4fb8f725a8/polygon_ehrhart.md)
 
+The archived v1.0.0 release contains the paper, the Lean project and reproducibility materials. [Version DOI](https://doi.org/10.5281/zenodo.24554683) · [GitHub release](https://github.com/AlexZander-666/polygon-ehrhart-signs/releases/tag/v1.0.0)
+
 ## Mathematical question and proof
 
 Lundström and Saud Maia Leite ask whether all ordinary Ehrhart coefficients in this family are nonnegative. The question concerns the order polytope of the **full face lattice**. A point of its $q$-th integer dilation is an order-preserving assignment of integers from 0 through $q$ to those faces. [Journal Question 6.4](https://doi.org/10.1016/j.ejc.2025.104304) · [Preprint v5 Question 6.5](https://arxiv.org/html/2504.05123v5#S6)
