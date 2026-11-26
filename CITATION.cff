@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Please cite this release when using the formal proof or the reproducibility materials."
+title: "The signs of all Ehrhart coefficients for face lattices of polygons"
+type: software
+authors:
+  - family-names: Zuo
+    given-names: Bowen
+    affiliation: East China University of Science and Technology
+date-released: 2026-11-26
+version: "1.0.0"
+repository-code: "https://github.com/AlexZander-666/polygon-ehrhart-signs"
+license: Apache-2.0
+keywords:
+  - Ehrhart polynomials
+  - order polytopes
+  - face lattices
+  - Lean 4

@@ -1,0 +1,3 @@
+import PolygonEndpoint.FirstNegativeDegree
+
+#print axioms PolygonEndpoint.unordered_first_negative_degree

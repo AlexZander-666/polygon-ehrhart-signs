@@ -1,0 +1,354 @@
+\documentclass[11pt]{article}
+\pdftrailerid{}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,microtype}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks,pdfauthor={Bowen Zuo},pdftitle={The signs of all Ehrhart coefficients for face lattices of polygons}]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\EE}{\mathcal E}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\tr}{\operatorname{tr}}
+\title{The signs of all Ehrhart coefficients for face lattices of polygons}
+\author{Bowen Zuo\\{\normalsize East China University of Science and Technology}}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+The order polytope of the complete face lattice of a convex \(n\)-gon
+has nonnegative ordinary Ehrhart coefficients exactly when \(3\le n\le12\).
+There are exactly \(\max(0,n-12)\) negative coefficients. A positive-degree
+coefficient at distance \(d\) from the leading term is negative exactly
+when \(d\ge27\) and \(d\equiv0,3\pmod4\). Every other coefficient in the
+degree range is strictly positive. We also determine the leading asymptotic
+at every fixed positive degree and every fixed distance from the top.
+A two-term approximation has relative remainder of order \(n^{-2}\) uniformly in the degree, measured against the leading term.
+The proof separates the two endpoint labels from the crown
+poset and extracts the requested coefficients before estimating the trace.
+\end{abstract}
+
+\section{Statement}
+
+Let \(L_n\) be the inclusion poset of all faces of a convex \(n\)-gon,
+including the empty face and the entire polygon. Denote by \(E_n(q)\)
+the Ehrhart polynomial of the order polytope \(\OO(L_n)\). At
+nonnegative integer \(q\), it counts weakly order-preserving labels in
+\(\{0,\ldots,q\}\), equivalently the integer points in the \(q\)-fold
+dilate of \(\{x\in[0,1]^{L_n}:x_u\le x_v\text{ if }u\le v\}\)
+\cite{stanley}. Write \(a_{n,r}=[q^r]E_n(q)\). Lundstr\"om and Saud Maia
+Leite ask whether all these numbers are nonnegative for every polygon
+\cite[Question 6.4; preprint Question 6.5]{crown}.
+
+The October 2026 calculation recorded in the Open Problems Catalog
+\cite{catalog} and the note of Patel \cite{patel} give
+\(a_{13,1}=-298495711/35302608\). Both verify the signs through
+\(n=13\), including the minimality of the thirteen-gon. We use this
+known example to illustrate an all-size classification. Our theorem
+determines the sign in every degree for every polygon and gives the
+exact count of negative coefficients as the number of sides increases.
+
+\begin{theorem}\label{classification}
+For every \(n\ge3\) put \(D=2n+2\). For \(1\le r\le D\), the coefficient
+\(a_{n,r}\) is negative exactly when \(D-r\ge27\) and
+\(D-r\equiv0,3\pmod4\). All other coefficients in degrees \(0,\ldots,D\)
+are strictly positive. There are exactly \(\max(0,n-12)\) negative
+coefficients. In particular, all coefficients are nonnegative exactly for
+\(3\le n\le12\).
+\end{theorem}
+
+\begin{theorem}\label{fixed}
+Put \(D_n=(2n)!/\pi^{4n}\). For each fixed integer \(r\ge1\), as \(n\to\infty\),
+\[
+\frac{a_{n,r}}{D_n} =
+\begin{cases}
+ (-1)^{n+(r-1)/2}\dfrac{5\,2^{r-1}\pi^{r-1}}{r!}
+ (1+O_r(n^{-1})), &r\text{ odd},\\[4pt]
+ (-1)^{n+r/2}\dfrac{2^{r-1}\pi^{r-2}}{r!}(2n)
+ (1+O_r(n^{-1})), &r\text{ even}.
+\end{cases}
+\]
+Consequently the number of strictly negative coefficients of \(E_n\)
+tends to infinity.
+\end{theorem}
+
+Liu and Tsuchiya determined the entire sign pattern for Stanley's family
+of posets consisting of an antichain below a single maximum \cite{liu}.
+Here the two middle ranks are joined by the vertex--edge incidence cycle
+of a polygon, and the complete face lattice has both endpoints.
+Cao and Fu establish real-rootedness for the \(h^*\)-polynomial of the
+crown order polytope \cite{cao}. The coefficients considered here arise
+after counting all dilates in the ordinary power basis.
+
+\section{A trace and its centered powers}
+
+Every convex polygon with the same number of sides has the same cyclic face poset up to isomorphism. The induced permutation of coordinates preserves each dilated order polytope and its integer lattice. The endpoint decomposition for this full face poset and its numerical use
+at thirteen sides appear in \cite{catalog,patel}. For the circular-fence
+transfer see Huang \cite[Proposition 4.1]{huang}. We recall the count to
+fix the width convention. Condition on the minimum and maximum face labels. There are \(q+2-m\)
+choices of the two labels giving inclusive width \(m\). For fixed vertex
+labels \(i,j\in\{1,\ldots,m\}\), the intervening edge admits
+\(m+1-\max(i,j)\) labels. Multiplication around the polygon therefore gives
+\[
+ E_n(q)=\sum_{m=1}^{q+1}(q+2-m)\tr(T_m^n),\qquad
+ (T_m)_{ij}=m+1-\max(i,j).
+\]
+Reversing the order of coordinates gives \((\min(i,j))_{ij}\).
+Cao and Fu \cite[Proposition 3.1]{cao} and the references there give
+the trace and its spectral evaluation for the crown alone.
+Here the full face lattice contributes the width weights in the sum above.
+The minimum matrix is the product of the lower triangular all-ones matrix
+and its transpose. Its
+determinant is one; its inverse has off-diagonals \(-1\) and diagonal
+\(2,\ldots,2,1\). Thus \(d_m=\det(I-zT_m)\) satisfies
+\(d_m=(2-z)d_{m-1}-d_{m-2}\), \(d_0=1,d_1=1-z\).
+With \(z=4\sin^2\theta\), the recurrence yields
+\(d_m(4\sin^2\theta)\cos\theta=\cos((2m+1)\theta)\). Near zero we may divide by \(\cos\theta\).
+Taking the logarithm and comparing coefficients in
+\(-\log d_m=\sum_{n\ge1}\tr(T_m^n)z^n/n\) gives
+\begin{equation}\label{trace}
+ a_{n,r}=n4^{-n}\sum_{k=1}^n c_k b_{n,k}W_{k,r}.
+\end{equation}
+Here \(b_{n,k}=[w^{2n}](\arcsin w)^{2k}\),
+\(c_k=[s^{2k}]\log\sec s=(4/\pi^2)^k\sigma_k/k\) by Euler's cosine
+product, with \(\sigma_k=\sum_{j\ge1,\ j\ {\rm odd}}j^{-2k}\).
+Also \(W_{k,r}=L_r((2m+1)^{2k}-1)\), where
+\(L_r(f)=[q^r]\sum_{m=1}^{q+1}(q+2-m)f(m)\) on polynomials in \(m\).
+The latter sum is polynomial in \(q\) by two successive sums of powers.
+
+Set \(H_r(s)=\sum_{k\ge0}W_{k,r}s^{2k}/(2k)!\). For \(r\ge1\),
+\begin{equation}\label{weights}
+ H_r(s)=\frac{2^{r-2}s^r}{r!\sinh^2 s}
+ \begin{cases}\sinh(5s),&r\text{ odd},\\ \cosh(5s),&r\text{ even}\end{cases}
+ -d_r\cosh s ,
+\end{equation}
+where \(d_1=5/2,\ d_2=1/2,\ d_r=0\) for \(r>2\).
+Indeed with \(y=e^{2s}\) the exponential sum is
+\(e^s y((q+1)-(q+2)y+y^{q+2})/(1-y)^2\). Its exponential term is
+\(e^{(2q+5)s}/(4\sinh^2s)\). At \(r=1\) the even part of the further
+linear term \(e^s y/(1-y)\) equals \(-\cosh s\).
+Subtracting \(L_r(1)\cosh s\) gives \eqref{weights}. These extractions
+hold coefficientwise in \(s\) by polynomial continuation from integer \(q\).
+Equivalently, put \(\widehat H_j=H_j+d_j\cosh s\), and let \(p=1\)
+or \(2\) according as \(r\) is odd or even. Then
+\[
+ \widehat H_r(s)=\frac{2^{r-1}}{r!}\,s^{r-p}\widehat H_p(s).
+\]
+Thus the principal parts for all fixed degrees follow from the two
+base functions.
+
+\section{Dominant coefficients at fixed degree}
+
+At \(a=\pm i\pi\) the odd case of \eqref{weights} has a simple pole with
+residue \(-5\,2^{r-2}a^r/r!\). The even case has principal part
+\[
+ -\frac{2^{r-2}}{r!}\left(\frac{a^r}{(s-a)^2}
+                              +\frac{ra^{r-1}}{s-a}\right).
+\]
+After subtracting both principal parts the function is analytic on
+\(|s|<2\pi\). Cauchy's estimate at \(3\pi/2\) shows that
+\(M_{k,r}=\pi^{2k}W_{k,r}/(2k)!\) differs by \(O_r((2/3)^{2k})\) from
+\[
+ \begin{cases}
+ (-1)^{k+(r-1)/2}5\,2^{r-1}\pi^{r-1}/r!,&r\text{ odd},\\
+ (-1)^{k+r/2}2^{r-1}\pi^{r-2}(2k+1-r)/r!,&r\text{ even}.
+ \end{cases}
+\]
+In particular \(\sup_{1\le k\le n}|M_{k,r}/M_{n,r}|\) stays bounded
+for large \(n\). In the ordering by coefficients,
+\((\arcsin w)/w\preceq(1-w^2)^{-1}\), so
+\(b_{n,k}\le\binom{n+k-1}{n-k}\). For \(j=n-k\),
+\[
+ \frac{(2k)!}{(2n)!}\binom{n+k-1}{j}
+ =\frac{2k}{n+k}\frac1{j!\prod_{\ell=n+k+1}^{2n}\ell}.
+\]
+Since \(1\le\sigma_k<2\), the sum of the absolute off-diagonal terms
+in \eqref{trace} divided by the absolute diagonal term is bounded by
+\(4\sup_{k\le n}|M_{k,r}/M_{n,r}|
+(\exp(\pi^4/(4(n+1)))-1)\). The diagonal is \(\sigma_n D_n M_{n,r}\),
+and \(\sigma_n=1+O(3^{-2n})\). This proves the asymptotic in
+Theorem~\ref{fixed}. For each \(h\), among the first \(4h\) positive
+indices exactly \(2h\) have negative eventual sign for either parity of
+\(n\). Taking the maximum of these finitely many thresholds and \(2h-1\) ensures \(4h\le2n+2\) and proves the assertion.
+
+\section{Signs in every degree}
+
+Write \(D=2n+2\), and let \(d=D-r\) be the distance of the coefficient
+from the leading term. Introduce a single sequence, independent of \(n\),
+\[
+ F(s)=e^{5s}(s/\sinh s)^2=\sum_{d\ge0}g_ds^d,\qquad g_i=0\quad(i<0).
+\]
+Put \(K_r=2^{r-2}/r!\). Since \(2k+2-r\) has the same parity as \(r\),
+\eqref{weights} yields an exact real identity for \(1\le r\le D\):
+\[
+ \frac{a_{n,r}+d_r/(2\,4^n)}
+      {\sigma_n(2n)!K_r/\pi^{2n}}
+   = g_d+\sum_{j=1}^{n-1}
+ \frac{c_{n-j}}{c_n}\, b_{n,n-j}
+ \frac{(2n-2j)!}{(2n)!}\,g_{d-2j}.
+ \tag{*}
+\]
+Indeed the subtracted \(\cosh s\) contributes the same unit weight at
+every \(k\), and
+\(\sum_kc_k b_{n,k}=[w^{2n}]\log\sec(\arcsin w)=1/(2n)\).
+For fixed \(d\), only finitely many terms on the right can occur.
+
+\begin{lemma}\label{kernel}
+For every \(d\ge0\), \(g_d\ne0\). The negative entries are exactly those with
+\(d\ge27\) and \(d\equiv0,3\pmod4\).
+For \(d\ge2\) one has \(|g_{d-2}|\le108|g_d|\); for \(d\ge27\)
+the factor \(108\) can be replaced by \(28\). Furthermore
+\(\pi^d|g_d|\ge1\) for \(d\ge96\).
+\end{lemma}
+\begin{proof}
+At either \(a=i\pi,-i\pi\), the principal part of \(F\) is
+\(-a^2/(s-a)^2-(2a+5a^2)/(s-a)\).
+Subtract both principal parts. On \(|s|=3\pi/2\) the remainder is bounded
+by \(10^{14}\). Indeed, writing \(s=x+iy\), one has
+\(|\sinh s|^2=\sinh^2x+\sin^2y\). For \(|x|\ge1/2\) the first term
+is at least \(1/4\); otherwise \(4\pi/3<|y|\le3\pi/2\).
+Also \(e^{5|x|}<e^{24}<3\cdot10^{10}\), and each pole stays
+at distance at least \(\pi/2\) from the circle. Cauchy's bound gives
+\[
+ \left|\pi^d g_d-
+ \begin{cases}
+ 2(1-d)(-1)^{d/2},&d\text{ even},\\
+ 10\pi(-1)^{(d-1)/2},&d\text{ odd}
+ \end{cases}\right|\le10^{14}(2/3)^d.
+\]
+The error is less than one for \(d\ge94\). For \(d\ge96\) the displayed
+main terms fix the sign and give
+\(\pi^2|\pi^{d-2}g_{d-2}|/|\pi^dg_d|<12\), separately in each parity.
+For \(0\le d\le95\) use \(g_0=1\) and the rational recurrence
+\[
+ g_d=\frac{5^d}{d!}-
+ \sum_{1\le j\le d/2}\frac{2^{2j+1}}{(2j+2)!}\,g_{d-2j},
+\]
+obtained by multiplying \(F\) by \((\sinh s/s)^2\).
+The sign test and the two ratio tests in this finite range are reproduced
+by the accompanying certificate; the largest unrestricted ratio occurs at \(d=24\).
+\end{proof}
+
+Suppose \(n\ge65\). For \(d<27\) and \(r\ge3\) all nonzero terms in
+\((*)\) are positive. For \(d\ge27\) we bound its off-diagonal terms
+in absolute value relative to \(|g_d|\). The ratio of successive coefficients
+of \((\arcsin w)/w\), as a series in \(w^2\), is
+\((2h+1)^2/(2(h+1)(2h+3))\le(h+1/6)/(h+1)\). Hence
+\((\arcsin w)/w\preceq(1-w^2)^{-1/6}\). For \(j\ge1\) and \(k=n-j\ge1\),
+this gives \(b_{n,k}\le \tfrac13\binom{n-1}{j}\) by comparing the
+rising factorials \((k/3)^{\overline j}\) and \(k^{\overline j}\).
+Use \(c_k/c_n=(\pi^2/4)^j(n/k)\sigma_k/\sigma_n\) and
+\(\sigma_k/\sigma_n\le\pi^2/8<5/4\).
+The even factors of \((2n)!/(2k)!\) cancel the factor
+\((n/k)\binom{n-1}{j}\), leaving the denominator
+\(2^j j!\prod_{h=0}^{j-1}(2n-2h-1)\).
+Lemma~\ref{kernel} bounds the first step in the ratio of the \(g\)'s by 28
+and all later steps by 108. Taking \(\pi^2<10\), the sum of relative
+off-diagonal magnitudes is bounded by
+\[
+ \frac5{12}\frac{35}{2n-1}
+ \left(1-\frac{135}{3(n-1)}\right)^{-1}<\frac25 .
+\]
+Here \((j+1)(2n-2j-1)\ge3(n-1)\) for \(1\le j\le n-2\);
+the minimum of the concave quadratic occurs at an endpoint.
+For \(r=1,2\), \(K_r=1/2\), \(d\ge96\), and the remaining correction
+\(d_r/(2\,4^n)\), relative to the absolute diagonal term, is at most
+\[
+ \frac{d_r\pi^{2n+d}}{4^n(2n)!}\le10(25/n)^n<1/32.
+\]
+Thus every \(r\ge1\) has the sign of \(g_d\) for \(n\ge65\).
+For fixed \(d\) the off-diagonal bound is \(O_d(1/n)\) (the finitely many
+positive \(d<27\) have bounded ratios as well). In particular,
+\[
+ \frac{a_{n,D-d}}{a_{n,D}\,D(D-1)\cdots(D-d+1)/2^d}\longrightarrow g_d .
+\]
+
+For the finite range \(3\le n\le64\), evaluate \(E_n(q)\) at
+\(0\le q\le D\) using Section~2. One exact procedure uses
+\([z^h]\det(I-zT_m)=(-1)^h\binom{m+h}{2h}\), a consequence of
+the determinant recurrence and Pascal's identity, and reconstructs
+\(\tr(T_m^n)\) by Newton's identities. Ordinary interpolation then
+gives every coefficient. An independent check evaluates the published
+crown recurrence and interpolates in the Lagrange basis, scaling by
+\(D!\) throughout. Both procedures give the stated signs at every
+index; the exact scripts and row checksums accompany the manuscript.
+At the first two failing sizes \(a_{13,1}=-298495711/35302608\) and
+\(a_{14,2}=-1120562922791524339/1248974278051500\).
+Since \(E_n(0)=1\), the constant coefficient is always positive.
+Counting the two residue classes in \(27,\ldots,2n+1\) gives
+\(\max(0,n-12)\) negative coefficients. This proves Theorem~\ref{classification}.
+
+\section{A uniform two-term estimate}
+
+The approximation at fixed distance from the top has a version in which the
+degree may move with the polygon. Put \(L_{n,r}=\sigma_n(2n)!K_r/\pi^{2n}\).
+For \(1\le r\le 2n+2\) and \(n\ge66\), one has
+\[
+ \left|\frac{a_{n,r}}{L_{n,r}}-g_d
+ -\frac{\pi^2}{24(2n-1)}\frac{\sigma_{n-1}}{\sigma_n}g_{d-2}\right|
+ \le \frac{15001}{n^2}\,|g_d|,\qquad d=2n+2-r .
+\]
+The zero extension of \(g\) includes the cases \(d=0,1\).
+Indeed \(b_{n,n-1}=(n-1)/3\), by taking the first correction in
+\((\arcsin w)^{2n-2}\). Substitution in \((*)\) gives the displayed
+multiplier of \(g_{d-2}\).
+
+For the remaining offsets put \(M_j=108^{j+1}(\pi^2/8)^{j+1}/
+((j+1)!\prod_{i=0}^j(2n-2i-1))\). The term at offset \(j+1\) has
+absolute value at most \((5/12)M_j|g_d|\). The preceding product bound
+gives \(M_0\le135/n\) and \(M_1\le10000/n^2\). While a further term occurs,
+\[
+ M_{j+1}/M_j=\frac{108\pi^2/8}{(j+2)(2n-2j-3)}
+ \le\frac{135}{192}.
+\]
+The geometric sum beginning at \(M_1\), including the factor \(5/12\),
+is therefore at most \(15000/n^2\). The low-degree compensation is zero
+unless \(r=1,2\). At either index its relative bound from the preceding
+section is at most \(1/n^2\): apply the \(1/32\) factorial bound at
+\((n-1,d-2)\) and multiply by
+\(\pi^4/(4(2n)(2n-1))\). This proves the estimate.
+
+\paragraph{Formal verification.}
+The accompanying Lean~4 and Mathlib project starts from integer points
+in dilates of the order polytope. For a finite set of points in the plane spanning a polygon,
+the geometric proof assumes that this set consists of the extreme points
+of its convex hull. It derives a cyclic boundary order in which every
+increasing triple has positive signed area and identifies every exposed
+face, including the empty face and the polygon. Two independent computations check the finite rows through
+\(n=64\). For larger \(n\), the project proves the diagonal identity,
+the kernel signs and the remainder estimates. It also proves the fixed
+degree and fixed codimension limits for arbitrary such polygon families.
+The source archive includes the statements, dependency lock and replay
+instructions.
+
+
+\paragraph{Data and code availability.}
+The Lean sources, exact certificates and reproduction scripts accompany version
+1.0.0 of the \href{https://github.com/AlexZander-666/polygon-ehrhart-signs}{polygon-ehrhart-signs repository}.
+\paragraph{Acknowledgment.} ChatGPT assisted with the derivations, independent checks, preparation of certificates, and drafting.
+
+\begin{thebibliography}{9}
+\bibitem{crown} T. Lundstr\"om and L. Saud Maia Leite, Order polytopes of
+crown posets, \emph{European J. Combin.} 133 (2026), 104304.
+\href{https://doi.org/10.1016/j.ejc.2025.104304}{doi:10.1016/j.ejc.2025.104304}.
+\bibitem{stanley} R. P. Stanley, Two poset polytopes, \emph{Discrete
+Comput. Geom.} 1 (1986), 9--23.
+\bibitem{liu} F. Liu and A. Tsuchiya, Stanley's non-Ehrhart-positive
+order polytopes, \emph{Adv. Appl. Math.} 108 (2019), 1--10.
+\href{https://doi.org/10.1016/j.aam.2019.03.004}{doi:10.1016/j.aam.2019.03.004}.
+\bibitem{cao} Y. Cao and H. Fu, Real-rooted Ehrhart \(h^*\)-polynomials
+of crown posets and wheel and whirl matroids,
+\href{https://arxiv.org/abs/2610.40496v2}{arXiv:2610.40496v2}.
+\bibitem{huang}
+P. C. Huang, \emph{Bernstein Transfers and Greedy Records for Fence and
+Circular-Fence Order Polynomials}, 2026.
+\href{https://arxiv.org/abs/2607.22767v2}{arXiv:2607.22767v2}.
+\bibitem{catalog}
+Open Problems Catalog, \emph{Q3499: a 13-gon disproves polygon-face
+Ehrhart nonnegativity}, dated 9 October 2026.
+\href{https://github.com/10m-u/open-problems-catalog/blob/ca8d4d44ba3db527f19f28928c240168f545ecfe/solutions/seven-more-2026-10-09/discrete/Q3499-proof.md}{Archived source and exact certificate}.
+\bibitem{patel}
+M. Patel, \emph{A Negative Ehrhart Coefficient for the Order Polytope
+of a Polygon Face Lattice}, dated 10 October 2026.
+\href{https://github.com/mantrakp04/research-papers/blob/c0505c4261045f1ab5760a024f1dfc4fb8f725a8/polygon_ehrhart.md}{Versioned manuscript}.
+\end{thebibliography}
+\end{document}

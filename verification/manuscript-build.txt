@@ -1,0 +1,7 @@
+Title:           The signs of all Ehrhart coefficients for face lattices of polygons
+Author:          Bowen Zuo
+Pages:           5
+f008989905a6dda89ee1b644f03b84e9021498fe0a3f56ced420281dd27abbda  paper/main.tex
+c61404e6c740a14886c3d9f582fbdd81358523026d7014309c909e4c825e6b03  paper/main.pdf
+4da6bb86ddd9d55a26f39a9664162027fb596e90d3f83ded664bbd1358a152f2  paper/arxiv-source.zip
+Two clean compilation directories produced byte-identical PDFs.

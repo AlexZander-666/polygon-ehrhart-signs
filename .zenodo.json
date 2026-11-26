@@ -1,0 +1,10 @@
+{
+  "title": "The signs of all Ehrhart coefficients for face lattices of polygons",
+  "description": "Lean 4 proofs, a manuscript and exact certificates for the signs of every ordinary Ehrhart coefficient of order polytopes of polygon face lattices. For an n-gon the number of negative coefficients is max(n-12,0). The October 2026 thirteen-gon witness is credited in the paper. The Apache license covers the original source code and verification scripts. The manuscript is distributed with its separate copyright notice.",
+  "creators": [{"name": "Zuo, Bowen", "affiliation": "East China University of Science and Technology"}],
+  "upload_type": "software", "version": "1.0.0", "license": "Apache-2.0",
+  "keywords": ["Ehrhart polynomial", "order polytope", "face lattice", "Lean 4", "algebraic combinatorics"],
+  "related_identifiers": [
+    {"identifier": "10.1016/j.ejc.2025.104304", "relation": "references", "scheme": "doi"},
+    {"identifier": "https://github.com/AlexZander-666/polygon-ehrhart-signs", "relation": "isSupplementTo", "scheme": "url"}]
+}

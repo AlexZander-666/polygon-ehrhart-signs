@@ -1,0 +1,498 @@
+DGX Spark, AArch64; 26 November 2026. Clean project build with locked external dependency cache.
+Independent kernel replay for every imported local module. The audit entry point was strictly elaborated.
+Local source and configuration SHA-256 values
+70877221b65f7abbc09ccff55f8f59980be84ea359a7f6cc42c59ade546e43b6  Polygon/BinomialContinuant.lean
+3a3b4fc8c75ef855c74b86d96afdb4bc0b8a16431c93896cdd43dbaefedb3e56  Polygon/BinomialTrace.lean
+618d4bfa1d9c72d8a289aef50b57e386b30dfea6009de3a982d65eb24206ab73  Polygon/Certificate.lean
+4bd8ac00d3d4d562acde9731576eb3f17fd9477ee5d388eb23787c454133549f  Polygon/ConvexBoundary.lean
+a73e77fc5a928e18c8e72be71857057f2e6d7e2886e5cb1c3f795bcb05b23380  Polygon/CosineZeta.lean
+66377fdc67fe31aa8cb2d2c353b22b8c040ea4b379dce60191e81535384970b4  Polygon/Counterexample.lean
+7a2ad53758a23eba98801455d2c8b14c0729034f77fbf6791f68c4029e60da47  Polygon/Ehrhart.lean
+77235b6fdddc0f5de84793619a71a7832ec8333b84faf3612ae68cdc48b82eb2  Polygon/FaceOrder.lean
+b3634254473635d1c1fb62e57e99b9cb353bd1a634eef8fcf91bcca13c10907a  Polygon/Finite64/N03.lean
+30f682df34688cd3acadb7f8b467c13580875ba4eceae9796ec925d2fc3a169f  Polygon/Finite64/N04.lean
+ff6579743a68bcef94c6bc271edb869fae81916cc6aeb4a0677b5fd9b8afb0c5  Polygon/Finite64/N05.lean
+b89b117b38b5363dc86f5759f77818d0eda8f34853f58518df678220b43e0b48  Polygon/Finite64/N06.lean
+fda2817bfc1ecd5b3c9379aacf6f19023b614fe764060ea238b12218ede257a0  Polygon/Finite64/N07.lean
+f68622ec4fa9e7de7a70d33b02e233ae9f34db10f4b0e0e5db791d1159cf94a3  Polygon/Finite64/N08.lean
+2eae64091064ac12b89281af7d5612dc3d57f421a79eaed1cdbd8564a3db78c1  Polygon/Finite64/N09.lean
+0a9f6091c0d54547869a384b5d0ef71ba3239df9281c3aca50636e415bbfb420  Polygon/Finite64/N10.lean
+eb048cfe925da7ffc19c3fbb74efe66124eaaa60185151790c735d3057083fe2  Polygon/Finite64/N11.lean
+7cb109f8f8672580f7c4b9637508e632f6825a363e5cffeb30ac15e6becea3dc  Polygon/Finite64/N12.lean
+e78dd972ec98583f5c6b2475c1750172ba71f9aacbd7bece40100c0f35bb9427  Polygon/Finite64/N13.lean
+b4bd092f25ab928c7e0ead75ee4dea589e69153385ad6b26e9eb4bce481e4114  Polygon/Finite64/N14.lean
+f8239c99138be262818c425f2657451c43ff65e214d1dc4dee7ce314b5ee515f  Polygon/Finite64/N15.lean
+fcf6947fbe4a5801941623b80a52946e79151ae037ac6d2796b4a200b062ca7f  Polygon/Finite64/N16.lean
+ad01b28cb6512fefe096c5f2651b57ade14c87cdb099cc22fdc96f34d64a726b  Polygon/Finite64/N17.lean
+34ac78888fbde5d14c2ec34df383f5b8afd4484f4c27251bcf77d250faba504f  Polygon/Finite64/N18.lean
+f54ba6eb6e3573b2eae962807f55a3b3c98a66b0e31a073d05f7b46432660c16  Polygon/Finite64/N19.lean
+74001eda41e79d5c1ebb95ea4280573fa7fcda321f6c9be855ccea0188abd3bd  Polygon/Finite64/N20.lean
+d43d7bebfad72318d4e0ec2c859b3af799351440c7ad893e927bb3a21526949c  Polygon/Finite64/N21.lean
+8d8004a538e95e3a0b3ceefb35c8139601515b2ac46486d5ef2698190966df28  Polygon/Finite64/N22.lean
+e0b3ce5a9ba867c865220379f539cdf2e88f51709a9a9c05535c7415fd64339c  Polygon/Finite64/N23.lean
+43150b2c22d47d0f20547a2965d09937b68370d2a9b987115fda10dc14bd87a7  Polygon/Finite64/N24.lean
+d74e9fb74d7287f10e349c1e5dcd62240ab7539859faa13d35b9d0ac61b44e44  Polygon/Finite64/N25.lean
+acf64bf6e2fe9f6ed41dfc24674104065a1dec3196e6d6c432ade994b8b8a2d1  Polygon/Finite64/N26.lean
+2d2750baef3bcd62ab66c8a688bcdb33eec200b9d2875d0fe6b3fcc1e82214fc  Polygon/Finite64/N27.lean
+f7e1933596611ad55e92601f29f17d4ffac779cdb8f6b6a459dc2fee54692dc1  Polygon/Finite64/N28.lean
+a0d91970bdd57d40703fbc77d63151e0d11d8fd3c8d6012705af6cd1de380c3e  Polygon/Finite64/N29.lean
+277d87aea893240261275253c444c9842d2ee1f6378bf66894145242c277847a  Polygon/Finite64/N30.lean
+226d133590f483d7adb582a770f4acda7669436b491f234281b78b41cc8ed3a1  Polygon/Finite64/N31.lean
+81925c5cbb681c30600d8cddea1756597b711e608f03861effc4a5a6465b34c8  Polygon/Finite64/N32.lean
+fa833aa4511167cdc3ea555835f82bb52773af0c0f0df2357cfa7b4512fbad29  Polygon/Finite64/N33.lean
+9c9fc3228ce7cd36fff930968e0d3ed550d9c87b3111741750eb3317986379ec  Polygon/Finite64/N34.lean
+301d400cf49dd2fa31e031b67fd3fc2b75b1547f525b9513431c38792c8aeac9  Polygon/Finite64/N35.lean
+2916a50d4041882867d8a25da76317c77dfaa6ee61175a132778b5bcc7345483  Polygon/Finite64/N36.lean
+fe55996d04af7cdafc763fd668e85a32f8e86beda9b3a70c82d7a0e7d10261df  Polygon/Finite64/N37.lean
+959cdd86e4cf5c56bbda15505aa401bd4241e2ec18cdff7bfd4534ba4fefee3b  Polygon/Finite64/N38.lean
+b35fee3adac93539d9beb022c88bd0211b18d7f00e14aba1345630c2128848d0  Polygon/Finite64/N39.lean
+2c68752a17d3adb3445c3000d075e0da08f4ca5dd3f2c7085cf5d48e716cc0f0  Polygon/Finite64/N40.lean
+b64b6f14fb73b23653b3fda73355f51fe0f893fcc14dc2b64a9cccd98827f102  Polygon/Finite64/N41.lean
+a0a3716de045f27848786dbc8f6995d0ed004618bd3509b67f92a2955a6fcce9  Polygon/Finite64/N42.lean
+dafc14f36612cc480a581cc757a85c7c5ac639f053e6fca541546c79a58086ab  Polygon/Finite64/N43.lean
+0a628e9b6d4ed4de5866a1a1b4f5e398ab2f0b1e78cbad4236fb2bff9ec513b0  Polygon/Finite64/N44.lean
+0a6513c6caa3be353cb76a6ad9e9be7a1afcd1b487c614c887b48cd509819dd2  Polygon/Finite64/N45.lean
+0d109b8890bbee27056022f1b2637a2c854a831833cbf317bef2c07f52ab8fb7  Polygon/Finite64/N46.lean
+ae21b815aa38102412e65f68682cbaf88575c0faca2c44502534d58c08c60dfc  Polygon/Finite64/N47.lean
+2264ad3dcea0e26a4588f6aa9b4644f67bf4939a652786ad3889ecd4879fc3c6  Polygon/Finite64/N48.lean
+0c3d1ef13a73d293bae2458640f639fa02b7981f2f9b003c9582e9cfc9679b45  Polygon/Finite64/N49.lean
+fabf5a255fe58db6a604ef854e79c06a400164ad56164574387c7d45557e673e  Polygon/Finite64/N50.lean
+1cc88c09e6b422829aaff1ebc1a3627092d96d18af48653b55e485931f9c3962  Polygon/Finite64/N51.lean
+2d44a45f5af85a0dbd4ea8489804f8ef6d03de64bf40ce005dce24e690bacd55  Polygon/Finite64/N52.lean
+2b8707ec863c2a31f9f1b20ec44c2ce161130edc9dc1cab4fb44b46e28a11d10  Polygon/Finite64/N53.lean
+fe252369327970ea387f0c0829971b881f360c1635664c7cbc171f0fd58f957e  Polygon/Finite64/N54.lean
+d3cf5f94e61076179507342b50d3e67b6fd2193186ddb4a5b0f35ee1252a0780  Polygon/Finite64/N55.lean
+4a098f9a5cc29aaef222d6720859b0d195b045ea3a0d1139b5779d34e4d76dc3  Polygon/Finite64/N56.lean
+ce74bdaed32771de096e240a80927ddec3ddd500bf935e7a8668ee5bc9713080  Polygon/Finite64/N57.lean
+21406516de9bcdc39d176aa70d1409ed8b727f9cfee1b002521781fbf00babe2  Polygon/Finite64/N58.lean
+e8d83606ff126e154dea21c90679505a74fc66a8896d0bb2835988a4f63fd36c  Polygon/Finite64/N59.lean
+2dedf9c2e20c3d762cab954b45a55edf64edccee0504ceb052cb98198b197649  Polygon/Finite64/N60.lean
+4e458fcd9ae8543ac45360bd7bac2879ab5c7c8e85af09cadf819d44d11785ca  Polygon/Finite64/N61.lean
+9ab98f99bfe71ad78409c6f186ac3c601ae9e6031b9b2b48c1d91947be40b8b0  Polygon/Finite64/N62.lean
+9c86977eb9f9e60a131c37b821d5a0f14cf1fa6cbca89351d5ad76cca4b5bc2e  Polygon/Finite64/N63.lean
+7ee3da4df5cbfe0c2c37e0dcc9a1f83e696bc341a58d0d18b0cd2d3141190e4a  Polygon/Finite64/N64.lean
+e5711241d4a8e548108a60692d73f02dc59cc0b60e930636eca64490ad4b7b51  Polygon/Finite64Columns/B001.lean
+c884568591195c8335c0a1e0baa69b6877f69e02cc60015ad709e661a5edd801  Polygon/Finite64Columns/B013.lean
+833991b01127ea1a3671d04136ffa48769b3f00e658b2163270b23c1eba7ea90  Polygon/Finite64Columns/B025.lean
+d527d2f1a6d23fa48e7d9af0c7be912f7b438c7581570c17e604239fa0dbb4a5  Polygon/Finite64Columns/B037.lean
+e69c6590cffee32a55675fab70080b9cd15fbc2d9448c50114215b90ae7eaa82  Polygon/Finite64Columns/B049.lean
+4ca0cc89414b7c02a01599c79886722d8324f6a4be7471759b50395f88c9562e  Polygon/Finite64Columns/B061.lean
+d376cf7dbd4a6842fea473ad3c699e7225b6ad40163a54b96bbb89542195419a  Polygon/Finite64Columns/B073.lean
+2a542c942f923b2730c90d8840752cca7f521acdd0084d8385f89edc19739865  Polygon/Finite64Columns/B085.lean
+9603f27fb98a1db73263000e6b51e7c578fa89086b59fddbfa06befc14b79679  Polygon/Finite64Columns/B097.lean
+3de46f81e5e78f23acf6c6726f6cfb991fc627906995689cb041ff73d75f95f1  Polygon/Finite64Columns/B109.lean
+18e19008cc3bbc5092ae7116114ba5dedcafeb1c143aff760b6a1198ced33de3  Polygon/Finite64Columns/B121.lean
+7cbec8bf604992105727a68d984d410a621fa7ef6f236f648fcd1ecf87c1e025  Polygon/Finite64Verified.lean
+2fc7beebf644f85fcaa9559b5443ea824ae1b6792720a45c0c12892158ab0aab  Polygon/FormalCosine.lean
+f53f8d18b053c15649575855197b9e43feec23bd91dfabb96ae86c1e7feb22ae  Polygon/GeneralIncidence.lean
+05031db135613db36f7624f5d2aaf55ee775453aa79a22175260657ba72a7712  Polygon/GeneralRealization.lean
+db1848c4934152bf51e984142ddbe3ffd8d551780e22b1f88a68354f7d0bda8b  Polygon/Interpolation.lean
+7f14a4eb6547c7f5ff2b6724b5281005a2342bc1a2c71c3dda10cac07eaff1a3  Polygon/InverseSineBound.lean
+43451c7ae9aa9384b6477563993a522457ddb758667716c5f4c45f360046bc1c  Polygon/Lattice.lean
+4cf00f9e2d97f2f898b4b988a67f06d7839fc526627a586df22eb233b43970ad  Polygon/NewtonExecutor.lean
+b9904477ea655be8ac256609b6cee1cdfbc2053f3e27df87cc5d137ead9e9c4e  Polygon/NewtonInterpolant.lean
+1d57a94866dc5f8779e010ae1ccf43fb66b1ffad6e8dd4a6694074f68cfd4e87  Polygon/NewtonTraceCache.lean
+0ed0cf066ebe98032ec9c4a9f9717b6b8b777ef51f30147c639fa76b997b5b26  Polygon/PoleBound.lean
+cef754b8f319e3504a897ebbb7b2f93420f8c83184cffeb0c60cfb91040dacfb  Polygon/PolygonTransport.lean
+0028fc9a64b2a615688b38dca7a2ab1a95aa361758cad1bdff862211cb063ac1  Polygon/Realization.lean
+560dea8242a950b49763947ac6821fbdce2d09f86ce10f41d52176484f41d1f1  Polygon/SmallPolynomial.lean
+575cc7fe45b8c6590148a87fe8ef759887775767093b1e0afe7230e408b4e0ff  Polygon/Tally.lean
+e13f860fd70f430c28c336590faf87d647f91d276d83364e704dcf4ad3c2fcc1  Polygon/Trace.lean
+0e115e4775c991ef01bf6626bcf43ad91cb1e9d80bf893179bd985dcaab5d242  Polygon/TraceSeries.lean
+193743da89d96931aab2ca4942216bccf6146a71e055549c68709c92fd2ade09  Polygon/TraceTable.lean
+b8631009be71cdd85187782040cc0dabf61095e9cd277a8d505ddd905fa1cb4a  Polygon/TraceWeights.lean
+e4436e2e48754f3524d84d695bb6294c2aaafe66e7594c4e451d1d6765155e86  Polygon/TransferDeterminant.lean
+17a17f286c8db4e07d0b80f45714b83b078b1057dc6e4b34bebe504b903b852e  Polygon/TransferFactor.lean
+dcf4ef317dca3e11077e8a0f85404d09e278919e02517a8a00fc705c1764e65f  Polygon/TransferSpectrum.lean
+2ba0a44b46aad83f41e755981665ed83f3c776d97b9ff1e8be2dd0aced37a17c  Polygon/UniformCoefficientBound.lean
+184d3f30052f11e66a727504fbd676b4f7beed3a0076ec5f0d6d28ffb301ee2f  Polygon/UnorderedExtremes.lean
+aa236539a3e7279f71547ce78d0a25f00ecbd53b197c8cb814faa3e8257c0a1c  Polygon/WidthSpectrum.lean
+2e4242b2a21d95cb36c7938cfa797af5f923d6ed29d80fdf1d5cfbeb2fbf8d67  PolygonEndpoint/AllCoefficients.lean
+1e67f1fb7ef5036246dcf713c00796cb8bd05a54c05499db40f3251f321ca144  PolygonEndpoint/BoundaryClassification.lean
+ef656ced47b0af7e57e2492346b3412c827359e2284e3f3b2dc4fbb73ed5d931  PolygonEndpoint/BoundaryFixedDegree.lean
+a3d55aaba274d4abea76792491c9b1f8df7d3da01f02bf31dd91bef65dfc4423  PolygonEndpoint/CorrectionBound.lean
+cc03ffb46f14257387bb5c6184ede6a6b8f51564826d839328b31db72484d392  PolygonEndpoint/CyclicClassification.lean
+ff72c56996ea237575ccb656ab5e769966576fb7e949377a2b403220df13ba08  PolygonEndpoint/Diagonal.lean
+11883ea3944a7417b77cb5b56c72200271ddcd57943a095ddd1382c8582b1b2f  PolygonEndpoint/Ehrhart.lean
+1136bc90d3ed2fb280fbb8503608c6ead2521680bb812cf264e0811dfaf3f25e  PolygonEndpoint/FirstNegativeDegree.lean
+ef714a4ae62ac4752a5eecec196cd5a886b9da1ec53b26d17992f4d41d8c97f9  PolygonEndpoint/FixedCodimension.lean
+ed967e2b8cbadbeb4242ec7376f9dd44b0b32f0064b338a62bcd382e1364bb74  PolygonEndpoint/FixedDegreeDiagonal.lean
+3a760b026b2e6191ea23cb0bda411e63a07af2dceaa6c4b4517762a4be06e728  PolygonEndpoint/FixedDegreeGeometry.lean
+b1e1c555167a3997fb0aae560ddd1b5b72fc21e2e6b65bcce544ca4355703a55  PolygonEndpoint/FixedDegreeTails.lean
+793a41abc88000854eb0a6123e70f926dfcebfb71d081534b9fa4fc2ac3ff4ac  PolygonEndpoint/LargeSigns.lean
+d73b8725f99d2e8f626cf8b88a439ee1e3ebe0303cc43fa0ad14ac5a5c65d4cb  PolygonEndpoint/NegativeCount.lean
+daf59654799585e2dc5922e066a5d2bd7913370d1383aa3e95013470e5801f61  PolygonEndpoint/Normalization.lean
+8dc52ab2f8c974c91f3aea655060b9fac9a7fdd5208fb853e103a4ca101b21ff  PolygonEndpoint/TopCoefficients.lean
+a54c51bee392d153fcd2c4668021ad2c8d0e0f1cb8fed7ee09159bb7d4f7fac4  PolygonEndpoint/UniformApprox.lean
+fa0a4c70fb037d5bab33d29356fd2b3d6e7eabae8f4ff09aa9fb36fbd7fe6387  PolygonEndpoint/UnorderedClassification.lean
+ccbb0fff66a219d2570ac491cfd964bd69ee49938f742733a1eca427cd79e587  PolygonEndpoint/UnorderedErrorRates.lean
+14bcb0745244323832a9fae18415796462b61e1ac4f10be53ba444c0c1884d4b  PolygonEndpoint/Weight.lean
+0a520efc083242e1707cf1a943b1158f75edd505712dfd484b2579a7b4844668  PolygonKernel/BernoulliBridge.lean
+16ade7a4d8dd7fe693ed8caa9cef9cace3eb36eb056134b03097fb8e3c226fc0  PolygonKernel/Certificate.lean
+39209bc1fc2ca29934387427f05f1d4c2937c56cf885ad6faf2f25f2000fca08  PolygonKernel/Data.lean
+b5a6dc51cfb50269caea30e75de2cc9702597750057b316e894e5643ce8de27f  PolygonKernel/Definition.lean
+9cfd6be34a3afe6d2488ceb3714bc4c6e4701d8b4c4d14bd7a98002218cbe029  PolygonKernel/KernelTail.lean
+4dec94922c9ba01c6be4035925da687b270753f4eaf0588f32179b1e61f5b0a8  PolygonKernel/SeriesBridge.lean
+b4b5923ab5eb8d9faf6dddb652ac7b7a1b159911a988f340e89020209fa9c6aa  PolygonKernel/ZetaBridge.lean
+5b83f71e8eaa0b50bb974e7666a7aed31b140f473eafe4a1c45d27cbe001ef86  PublicAudit.lean
+440d26ddc4db36e175cfc13832771846657b6ddcdf2c7113942fbe2942172687  lake-manifest.json
+8afd10e9c10cb25f1513b576e9286db64ee10d2e59212b94fafd25602007dbb6  lakefile.toml
+3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71  lean-toolchain
+Checked external Git revisions
+mathlib 0df444a360eaa60ab8c11dca51a86af692955474
+plausible b7eb3304aeae834b12dda98993a37f6a41f6f0bb
+LeanSearchClient 5f4d51b81cbd3f6b32b156bfad9056621a040404
+importGraph 16f02aa7642864af59f1ff0e384a015994db9118
+proofwidgets 4be2e3d5087eeb272cf5a8853b8f9dd025ef5957
+aesop 3448c0bcc5ce01b2d1546e483ec3620e32df3d0e
+Qq 92c15be17b7caf78c2ad767ec40f89052d908d81
+batteries 4488d40d070b9700d4d5a6aa342f0d40c31b2a2d
+Cli 6130a47896ce867c6a4a55373441e59e565bad0f
+Audited transitive axioms
+Polygon.Counterexample.counts_every_dilate : Classical.choice, Quot.sound, propext
+Polygon.Counterexample.exact_linear_coefficient : Classical.choice, Quot.sound, propext
+Polygon.Counterexample.negative_linear_coefficient : Classical.choice, Quot.sound, propext
+PolygonEndpoint.geometric_constant : Classical.choice, Quot.sound, propext
+PolygonEndpoint.positive_top : Classical.choice, Quot.sound, propext
+PolygonEndpoint.geometric_above : Classical.choice, Quot.sound, propext
+PolygonEndpoint.geometric_diagonal_sign : Classical.choice, Quot.sound, propext
+PolygonEndpoint.large_geometric_signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.geometric_signs : Classical.choice, Quot.sound, propext
+PolygonEndpoint.geometric_signs : Classical.choice, Quot.sound, propext
+PolygonEndpoint.geometric_classification : Classical.choice, Quot.sound, propext
+PolygonEndpoint.negative_low_degree : Classical.choice, Quot.sound, propext
+PolygonEndpoint.exists_negative_iff : Classical.choice, Quot.sound, propext
+Polygon.Tally.card_labeling_eq_traceCount : Classical.choice, Quot.sound, propext
+Polygon.GeneralRealization.geometricCounts : Classical.choice, Quot.sound, propext
+Polygon.GeneralRealization.ehrhart_by_sides : Classical.choice, Quot.sound, propext
+Polygon.FormalCosine.trace_centered_sum : Classical.choice, Quot.sound, propext
+PolygonEndpoint.weighted_second_diff : Classical.choice, Quot.sound, propext
+PolygonEndpoint.endpoint_exponential : Classical.choice, Quot.sound, propext
+PolygonEndpoint.exponentialPolynomial_eval : Classical.choice, Quot.sound, propext
+PolygonEndpoint.exponentialPolynomial_high : Classical.choice, Quot.sound, propext
+PolygonEndpoint.moment_eval : Classical.choice, Quot.sound, propext
+PolygonEndpoint.moment_coeff : Classical.choice, Quot.sound, propext
+PolygonEndpoint.geometric_polynomial : Classical.choice, Quot.sound, propext
+PolygonEndpoint.actual_ordinary_coefficient : Classical.choice, Quot.sound, propext
+PolygonEndpoint.amplit_sum : Classical.choice, Quot.sound, propext
+PolygonEndpoint.corrected_coefficient : Classical.choice, Quot.sound, propext
+Polygon.FormalCosine.c_pos : Classical.choice, Quot.sound, propext
+Polygon.InverseSineBound.diagonal : Classical.choice, Quot.sound, propext
+PolygonEndpoint.diagonal_row : Classical.choice, Quot.sound, propext
+PolygonEndpoint.leadingScale_positive : Classical.choice, Quot.sound, propext
+PolygonEndpoint.relativeWeight_nonnegative : Classical.choice, Quot.sound, propext
+Polygon.BinomialTrace.trace_integer : Classical.choice, Quot.sound, propext
+Polygon.NewtonExecutor.trace_correct : Classical.choice, Quot.sound, propext
+Polygon.NewtonExecutor.history_get : Classical.choice, Quot.sound, propext
+Polygon.NewtonInterpolant.certify_scaled : Classical.choice, Quot.sound, propext
+Polygon.NewtonTraceCache.trace_list_certificate : Classical.choice, Quot.sound, propext
+Polygon.Finite64.geometric_negative_iff : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N03.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N04.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N05.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N06.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N07.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N08.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N09.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N10.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N11.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N12.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N13.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N14.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N15.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N16.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N17.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N18.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N19.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N20.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N21.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N22.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N23.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N24.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N25.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N26.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N27.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N28.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N29.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N30.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N31.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N32.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N33.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N34.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N35.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N36.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N37.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N38.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N39.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N40.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N41.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N42.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N43.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N44.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N45.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N46.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N47.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N48.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N49.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N50.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N51.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N52.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N53.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N54.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N55.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N56.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N57.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N58.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N59.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N60.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N61.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N62.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N63.signs : Classical.choice, Quot.sound, propext
+Polygon.Finite64.N64.signs : Classical.choice, Quot.sound, propext
+Polygon.InverseSineBound.recurrence : Classical.choice, Quot.sound, propext
+Polygon.InverseSineBound.step : Classical.choice, Quot.sound, propext
+Polygon.InverseSineBound.above : Classical.choice, Quot.sound, propext
+Polygon.InverseSineBound.zero_column : Classical.choice, Quot.sound, propext
+Polygon.InverseSineBound.first_offset : Classical.choice, Quot.sound, propext
+Polygon.InverseSineBound.nonneg : Classical.choice, Quot.sound, propext
+Polygon.InverseSineBound.upper : Classical.choice, Quot.sound, propext
+Polygon.InverseSineBound.trace_weight_bound : Classical.choice, Quot.sound, propext
+Polygon.TraceWeights.cancellation : Classical.choice, Quot.sound, propext
+Polygon.TraceWeights.bound_of_ratio : Classical.choice, Quot.sound, propext
+Polygon.TraceWeights.normalized_bound : Classical.choice, Quot.sound, propext
+Polygon.FormalCosine.normalizedCot_mul_sin : Classical.choice, Quot.sound, propext
+Polygon.FormalCosine.cot_difference_mul_cos : Classical.choice, Quot.sound, propext
+Polygon.FormalCosine.mapped_logSec_derivative : Classical.choice, Quot.sound, propext
+Polygon.FormalCosine.two_mul_c_bernoulli : Classical.choice, Quot.sound, propext
+Polygon.FormalCosine.sigma_summable : Classical.choice, Quot.sound, propext
+Polygon.FormalCosine.sigma_zeta : Classical.choice, Quot.sound, propext
+Polygon.FormalCosine.sigma_one : Classical.choice, Quot.sound, propext
+Polygon.FormalCosine.sigma_antitone : Classical.choice, Quot.sound, propext
+Polygon.FormalCosine.sigma_bounds : Classical.choice, Quot.sound, propext
+Polygon.FormalCosine.c_eq_sigma : Classical.choice, Quot.sound, propext
+Polygon.FormalCosine.c_ratio : Classical.choice, Quot.sound, propext
+Polygon.FormalCosine.c_ratio_le : Classical.choice, Quot.sound, propext
+Polygon.FormalCosine.c_zero : Classical.choice, Quot.sound, propext
+Polygon.FormalCosine.c_mul_eq : Classical.choice, Quot.sound, propext
+Polygon.FormalCosine.c_normalized_ratio_le : Classical.choice, Quot.sound, propext
+PolygonKernel.H_mul_F : Classical.choice, Quot.sound, propext
+PolygonKernel.recurrence : Classical.choice, Quot.sound, propext
+PolygonKernel.g_eq_of_agreement : Classical.choice, Quot.sound, propext
+PolygonKernel.formalSinh_sq : Classical.choice, Quot.sound, propext
+PolygonKernel.F_mul_formalSinh_sq : Classical.choice, Quot.sound, propext
+PolygonKernel.F_eq_of_formalSinh : Classical.choice, Quot.sound, propext
+PolygonKernel.checked_table : Classical.choice, Quot.sound, propext
+PolygonKernel.entry_eq_g : Classical.choice, Quot.sound, propext
+PolygonKernel.finite_kernel : Classical.choice, Quot.sound, propext
+PolygonKernel.finite_kernel_of_formalSinh : Classical.choice, Quot.sound, propext
+PolygonEndpoint.top_coefficient : Classical.choice, Quot.sound, propext
+PolygonEndpoint.leadingScale_shift : Classical.choice, Quot.sound, propext
+PolygonEndpoint.codimension_error : Classical.choice, Quot.sound, propext
+PolygonEndpoint.fixed_codimension : Classical.choice, Quot.sound, propext
+PolygonEndpoint.geometric_fixed_codimension : Classical.choice, Quot.sound, propext
+Polygon.ConvexBoundary.boundaryOrder_iff_same_sign : Classical.choice, Quot.sound, propext
+Polygon.ConvexBoundary.point_mem_hull : Classical.choice, Quot.sound, propext
+Polygon.ConvexBoundary.indexedFace_subset_iff : Classical.choice, Quot.sound, propext
+Polygon.ConvexBoundary.indexedFace_isExposed : Classical.choice, Quot.sound, propext
+Polygon.ConvexBoundary.faceOrderIso : Classical.choice, Quot.sound, propext
+Polygon.ConvexBoundary.geometricFace_cases : Classical.choice, Quot.sound, propext
+Polygon.ConvexBoundary.exists_faceOrderIso_of_set : Classical.choice, Quot.sound, propext
+Polygon.ConvexBoundary.geometricEhrhart_eq_faceOrder : Classical.choice, Quot.sound, propext
+PolygonEndpoint.boundaryEhrhart_eq_reference : Classical.choice, Quot.sound, propext
+PolygonEndpoint.boundary_classification : Classical.choice, Quot.sound, propext
+PolygonEndpoint.boundary_negative_count : Classical.choice, Quot.sound, propext
+PolygonEndpoint.boundaryCodimensionRatio_eq : Classical.choice, Quot.sound, propext
+PolygonEndpoint.boundary_codimension_error : Classical.choice, Quot.sound, propext
+PolygonEndpoint.boundary_fixed_codimension : Classical.choice, Quot.sound, propext
+PolygonEndpoint.first_relative_weight : Classical.choice, Quot.sound, propext
+PolygonEndpoint.uniform_diagonal_error : Classical.choice, Quot.sound, propext
+PolygonEndpoint.uniform_first_order_error : Classical.choice, Quot.sound, propext
+PolygonKernel.g_odd_eta : Classical.choice, Quot.sound, propext
+PolygonKernel.g_even_eta : Classical.choice, Quot.sound, propext
+PolygonEndpoint.FixedDegree.eta_error : Classical.choice, Quot.sound, propext
+PolygonEndpoint.FixedDegree.sigma_error : Classical.choice, Quot.sound, propext
+PolygonEndpoint.FixedDegree.regular_error : Classical.choice, Quot.sound, propext
+PolygonEndpoint.FixedDegree.odd_refined : Classical.choice, Quot.sound, propext
+PolygonEndpoint.FixedDegree.even_refined : Classical.choice, Quot.sound, propext
+PolygonEndpoint.FixedDegree.odd_diagonal_rate : Classical.choice, Quot.sound, propext
+PolygonEndpoint.FixedDegree.even_diagonal_refined : Classical.choice, Quot.sound, propext
+PolygonEndpoint.FixedDegree.even_diagonal_rate : Classical.choice, Quot.sound, propext
+PolygonEndpoint.FixedDegree.odd_diagonal_bigO : Classical.choice, Quot.sound, propext
+PolygonEndpoint.FixedDegree.even_diagonal_bigO : Classical.choice, Quot.sound, propext
+PolygonEndpoint.FixedDegree.odd_diagonal_limit : Classical.choice, Quot.sound, propext
+PolygonEndpoint.FixedDegree.even_diagonal_limit : Classical.choice, Quot.sound, propext
+PolygonEndpoint.FixedDegree.odd_geometric_rate : Classical.choice, Quot.sound, propext
+PolygonEndpoint.FixedDegree.even_geometric_rate : Classical.choice, Quot.sound, propext
+PolygonEndpoint.FixedDegree.odd_geometric_bigO : Classical.choice, Quot.sound, propext
+PolygonEndpoint.FixedDegree.even_geometric_bigO : Classical.choice, Quot.sound, propext
+PolygonEndpoint.FixedDegree.odd_geometric_limit : Classical.choice, Quot.sound, propext
+PolygonEndpoint.FixedDegree.even_geometric_limit : Classical.choice, Quot.sound, propext
+PolygonEndpoint.boundary_fixed_odd_degree : Classical.choice, Quot.sound, propext
+PolygonEndpoint.boundary_fixed_even_degree : Classical.choice, Quot.sound, propext
+Polygon.UnorderedExtremes.card_ge_three : Classical.choice, Quot.sound, propext
+Polygon.UnorderedExtremes.exists_listing_of_card : Classical.choice, Quot.sound, propext
+Polygon.UnorderedExtremes.exists_boundary_listing : Classical.choice, Quot.sound, propext
+Polygon.UnorderedExtremes.faceOrderIso_of_extremes : Classical.choice, Quot.sound, propext
+PolygonEndpoint.unorderedFaceOrderIso : Classical.choice, Quot.sound, propext
+PolygonEndpoint.unorderedEhrhart : Classical.choice, Quot.sound, propext
+PolygonEndpoint.unorderedEhrhart_eq_reference : Classical.choice, Quot.sound, propext
+PolygonEndpoint.unordered_classification : Classical.choice, Quot.sound, propext
+PolygonEndpoint.unordered_negative_count : Classical.choice, Quot.sound, propext
+PolygonEndpoint.unordered_constant : Classical.choice, Quot.sound, propext
+PolygonEndpoint.geometric_ordinary_odd_limit : Classical.choice, Quot.sound, propext
+PolygonEndpoint.geometric_ordinary_even_limit : Classical.choice, Quot.sound, propext
+PolygonEndpoint.unordered_ordinary_zero_limit : Classical.choice, Quot.sound, propext
+PolygonEndpoint.unordered_ordinary_odd_limit : Classical.choice, Quot.sound, propext
+PolygonEndpoint.unordered_ordinary_even_limit : Classical.choice, Quot.sound, propext
+PolygonEndpoint.unordered_fixed_codimension : Classical.choice, Quot.sound, propext
+PolygonEndpoint.unordered_uniform_first_order_error : Classical.choice, Quot.sound, propext
+PolygonEndpoint.unordered_ordinary_odd_rate : Classical.choice, Quot.sound, propext
+PolygonEndpoint.unordered_ordinary_even_rate : Classical.choice, Quot.sound, propext
+PolygonEndpoint.unordered_ordinary_odd_bigO : Classical.choice, Quot.sound, propext
+PolygonEndpoint.unordered_ordinary_even_bigO : Classical.choice, Quot.sound, propext
+PolygonEndpoint.negative_count : Classical.choice, Quot.sound, propext
+PolygonEndpoint.correction_small : Classical.choice, Quot.sound, propext
+PolygonEndpoint.leadingScale_low : Classical.choice, Quot.sound, propext
+PolygonKernel.kernel_all : Classical.choice, Quot.sound, propext
+PolygonKernel.normalized_abs_lower : Classical.choice, Quot.sound, propext
+Polygon.UniformCoefficientBound.sign_of_centered_sum : Classical.choice, Quot.sound, propext
+Polygon.PolygonTransport.orderPolynomial_eq : Classical.choice, Quot.sound, propext
+Polygon.PolygonTransport.of_cyclic_incidence : Classical.choice, Quot.sound, propext
+PolygonEndpoint.cyclic_classification : Classical.choice, Quot.sound, propext
+PolygonEndpoint.cyclic_negative_count : Classical.choice, Quot.sound, propext
+PolygonEndpoint.unordered_first_negative_degree : Classical.choice, Quot.sound, propext
+Independent checker receipts
+kernel_replay_exit=0 Polygon.BinomialContinuant
+kernel_replay_exit=0 Polygon.BinomialTrace
+kernel_replay_exit=0 Polygon.Certificate
+kernel_replay_exit=0 Polygon.ConvexBoundary
+kernel_replay_exit=0 Polygon.CosineZeta
+kernel_replay_exit=0 Polygon.Counterexample
+kernel_replay_exit=0 Polygon.Ehrhart
+kernel_replay_exit=0 Polygon.FaceOrder
+kernel_replay_exit=0 Polygon.Finite64.N03
+kernel_replay_exit=0 Polygon.Finite64.N04
+kernel_replay_exit=0 Polygon.Finite64.N05
+kernel_replay_exit=0 Polygon.Finite64.N06
+kernel_replay_exit=0 Polygon.Finite64.N07
+kernel_replay_exit=0 Polygon.Finite64.N08
+kernel_replay_exit=0 Polygon.Finite64.N09
+kernel_replay_exit=0 Polygon.Finite64.N10
+kernel_replay_exit=0 Polygon.Finite64.N11
+kernel_replay_exit=0 Polygon.Finite64.N12
+kernel_replay_exit=0 Polygon.Finite64.N13
+kernel_replay_exit=0 Polygon.Finite64.N14
+kernel_replay_exit=0 Polygon.Finite64.N15
+kernel_replay_exit=0 Polygon.Finite64.N16
+kernel_replay_exit=0 Polygon.Finite64.N17
+kernel_replay_exit=0 Polygon.Finite64.N18
+kernel_replay_exit=0 Polygon.Finite64.N19
+kernel_replay_exit=0 Polygon.Finite64.N20
+kernel_replay_exit=0 Polygon.Finite64.N21
+kernel_replay_exit=0 Polygon.Finite64.N22
+kernel_replay_exit=0 Polygon.Finite64.N23
+kernel_replay_exit=0 Polygon.Finite64.N24
+kernel_replay_exit=0 Polygon.Finite64.N25
+kernel_replay_exit=0 Polygon.Finite64.N26
+kernel_replay_exit=0 Polygon.Finite64.N27
+kernel_replay_exit=0 Polygon.Finite64.N28
+kernel_replay_exit=0 Polygon.Finite64.N29
+kernel_replay_exit=0 Polygon.Finite64.N30
+kernel_replay_exit=0 Polygon.Finite64.N31
+kernel_replay_exit=0 Polygon.Finite64.N32
+kernel_replay_exit=0 Polygon.Finite64.N33
+kernel_replay_exit=0 Polygon.Finite64.N34
+kernel_replay_exit=0 Polygon.Finite64.N35
+kernel_replay_exit=0 Polygon.Finite64.N36
+kernel_replay_exit=0 Polygon.Finite64.N37
+kernel_replay_exit=0 Polygon.Finite64.N38
+kernel_replay_exit=0 Polygon.Finite64.N39
+kernel_replay_exit=0 Polygon.Finite64.N40
+kernel_replay_exit=0 Polygon.Finite64.N41
+kernel_replay_exit=0 Polygon.Finite64.N42
+kernel_replay_exit=0 Polygon.Finite64.N43
+kernel_replay_exit=0 Polygon.Finite64.N44
+kernel_replay_exit=0 Polygon.Finite64.N45
+kernel_replay_exit=0 Polygon.Finite64.N46
+kernel_replay_exit=0 Polygon.Finite64.N47
+kernel_replay_exit=0 Polygon.Finite64.N48
+kernel_replay_exit=0 Polygon.Finite64.N49
+kernel_replay_exit=0 Polygon.Finite64.N50
+kernel_replay_exit=0 Polygon.Finite64.N51
+kernel_replay_exit=0 Polygon.Finite64.N52
+kernel_replay_exit=0 Polygon.Finite64.N53
+kernel_replay_exit=0 Polygon.Finite64.N54
+kernel_replay_exit=0 Polygon.Finite64.N55
+kernel_replay_exit=0 Polygon.Finite64.N56
+kernel_replay_exit=0 Polygon.Finite64.N57
+kernel_replay_exit=0 Polygon.Finite64.N58
+kernel_replay_exit=0 Polygon.Finite64.N59
+kernel_replay_exit=0 Polygon.Finite64.N60
+kernel_replay_exit=0 Polygon.Finite64.N61
+kernel_replay_exit=0 Polygon.Finite64.N62
+kernel_replay_exit=0 Polygon.Finite64.N63
+kernel_replay_exit=0 Polygon.Finite64.N64
+kernel_replay_exit=0 Polygon.Finite64Columns.B001
+kernel_replay_exit=0 Polygon.Finite64Columns.B013
+kernel_replay_exit=0 Polygon.Finite64Columns.B025
+kernel_replay_exit=0 Polygon.Finite64Columns.B037
+kernel_replay_exit=0 Polygon.Finite64Columns.B049
+kernel_replay_exit=0 Polygon.Finite64Columns.B061
+kernel_replay_exit=0 Polygon.Finite64Columns.B073
+kernel_replay_exit=0 Polygon.Finite64Columns.B085
+kernel_replay_exit=0 Polygon.Finite64Columns.B097
+kernel_replay_exit=0 Polygon.Finite64Columns.B109
+kernel_replay_exit=0 Polygon.Finite64Columns.B121
+kernel_replay_exit=0 Polygon.Finite64Verified
+kernel_replay_exit=0 Polygon.FormalCosine
+kernel_replay_exit=0 Polygon.GeneralIncidence
+kernel_replay_exit=0 Polygon.GeneralRealization
+kernel_replay_exit=0 Polygon.Interpolation
+kernel_replay_exit=0 Polygon.InverseSineBound
+kernel_replay_exit=0 Polygon.Lattice
+kernel_replay_exit=0 Polygon.NewtonExecutor
+kernel_replay_exit=0 Polygon.NewtonInterpolant
+kernel_replay_exit=0 Polygon.NewtonTraceCache
+kernel_replay_exit=0 Polygon.PoleBound
+kernel_replay_exit=0 Polygon.PolygonTransport
+kernel_replay_exit=0 Polygon.Realization
+kernel_replay_exit=0 Polygon.SmallPolynomial
+kernel_replay_exit=0 Polygon.Tally
+kernel_replay_exit=0 Polygon.Trace
+kernel_replay_exit=0 Polygon.TraceSeries
+kernel_replay_exit=0 Polygon.TraceTable
+kernel_replay_exit=0 Polygon.TraceWeights
+kernel_replay_exit=0 Polygon.TransferDeterminant
+kernel_replay_exit=0 Polygon.TransferFactor
+kernel_replay_exit=0 Polygon.TransferSpectrum
+kernel_replay_exit=0 Polygon.UniformCoefficientBound
+kernel_replay_exit=0 Polygon.UnorderedExtremes
+kernel_replay_exit=0 Polygon.WidthSpectrum
+kernel_replay_exit=0 PolygonEndpoint.AllCoefficients
+kernel_replay_exit=0 PolygonEndpoint.BoundaryClassification
+kernel_replay_exit=0 PolygonEndpoint.BoundaryFixedDegree
+kernel_replay_exit=0 PolygonEndpoint.CorrectionBound
+kernel_replay_exit=0 PolygonEndpoint.CyclicClassification
+kernel_replay_exit=0 PolygonEndpoint.Diagonal
+kernel_replay_exit=0 PolygonEndpoint.Ehrhart
+kernel_replay_exit=0 PolygonEndpoint.FirstNegativeDegree
+kernel_replay_exit=0 PolygonEndpoint.FixedCodimension
+kernel_replay_exit=0 PolygonEndpoint.FixedDegreeDiagonal
+kernel_replay_exit=0 PolygonEndpoint.FixedDegreeGeometry
+kernel_replay_exit=0 PolygonEndpoint.FixedDegreeTails
+kernel_replay_exit=0 PolygonEndpoint.LargeSigns
+kernel_replay_exit=0 PolygonEndpoint.NegativeCount
+kernel_replay_exit=0 PolygonEndpoint.Normalization
+kernel_replay_exit=0 PolygonEndpoint.TopCoefficients
+kernel_replay_exit=0 PolygonEndpoint.UniformApprox
+kernel_replay_exit=0 PolygonEndpoint.UnorderedClassification
+kernel_replay_exit=0 PolygonEndpoint.UnorderedErrorRates
+kernel_replay_exit=0 PolygonEndpoint.Weight
+kernel_replay_exit=0 PolygonKernel.BernoulliBridge
+kernel_replay_exit=0 PolygonKernel.Certificate
+kernel_replay_exit=0 PolygonKernel.Data
+kernel_replay_exit=0 PolygonKernel.Definition
+kernel_replay_exit=0 PolygonKernel.KernelTail
+kernel_replay_exit=0 PolygonKernel.SeriesBridge
+kernel_replay_exit=0 PolygonKernel.ZetaBridge
+PASS: 133 project modules replayed; 212 declarations audited.

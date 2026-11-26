@@ -1,0 +1,86 @@
+import Polygon.NewtonTraceCache
+
+/-! Exact trace and interpolation inputs for the 11-gon. -/
+namespace Polygon.Finite64.N11
+
+open NewtonInterpolant
+
+def numerators : List ℤ := [
+  620448401733239439360000,
+  7867465404816318529536000,
+  54356562090535059210240000,
+  217519934233589903760261120,
+  623278673754770095969370112,
+  1393496887168918375289487360,
+  2468585422507405278723047424,
+  3520647324128208249268930560,
+  4133514963302038349829398528,
+  4054857581987999299816089600,
+  3342022941827630988447094784,
+  2319324370949468005319792640,
+  1357593556974466809310066688,
+  670164309012503180271728640,
+  277903576359208516076079104,
+  96038050431490224136273920,
+  27356580227031746804123648,
+  6340002565257781278228480,
+  1177402717439758860959744,
+  171953374602806191718400,
+  19255509340374852435968,
+  1592797631139002449920,
+  91596407301819858944,
+  3267988715061903360,
+  54466478584365056
+]
+
+def traces : List ℕ := [
+  1,
+  39603,
+  54347662,
+  12723161362,
+  1013528712002,
+  39148679549341,
+  899869747227853,
+  14001627504871339,
+  160756483104087289,
+  1446900012673150684,
+  10669493415807921750,
+  66630092158475349978,
+  361489729109510639905,
+  1738325798730640266549,
+  7529202736070422284954,
+  29758960683333963590854,
+  108494428932726072573853,
+  368138272247550994264741,
+  1171406269516840470556402,
+  3517913321994322132263262,
+  10026143502719045822366312,
+  27246987323634433884530353,
+  70898072722532352414726511,
+  177277275934438673708462025,
+  427324056457273739555457925
+]
+
+def scale : ℕ := 620448401733239439360000
+
+set_option maxRecDepth 30000 in
+set_option maxHeartbeats 0 in
+private theorem trace_evaluated : NewtonTraceCache.traceRow 11 25 = traces := by decide +kernel
+
+set_option maxRecDepth 30000 in
+set_option maxHeartbeats 0 in
+private theorem values_checked : valuesOK 25 scale numerators traces = true := by decide +kernel
+
+private theorem signs_checked : signsOK 11 numerators = true := by decide +kernel
+
+theorem polynomial_eq :
+    FaceOrder.ehrhartPolynomial 10 = Small.fromCoeffs (normalized scale numerators) :=
+  certify_scaled 10 scale numerators traces (by decide +kernel) (by decide +kernel)
+    (NewtonTraceCache.trace_list_certificate 11 25 (by decide) (by decide) trace_evaluated) (valuesOK_sound values_checked)
+
+theorem signs (j : Fin 25) :
+    ((FaceOrder.ehrhartPolynomial 10).coeff j.val < 0 ↔ negativeIndex 11 j.val) ∧
+      ((FaceOrder.ehrhartPolynomial 10).coeff j.val ≠ 0) :=
+  signsOK_sound (by decide +kernel) polynomial_eq signs_checked j
+
+end Polygon.Finite64.N11
