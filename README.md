@@ -31,3 +31,7 @@ To rebuild the paper with TeX Live, run `bash paper/build-pdf.sh /tmp/polygon-eh
 ## Author and version
 
 Bowen Zuo, East China University of Science and Technology. ChatGPT assisted with derivations, independent checks, certificate preparation and drafting. Version 1.0.0, 26 November 2026. Original proof sources and scripts use Apache-2.0. The manuscript has a separate copyright notice. [Citation](CITATION.cff) · [License scope](LICENSE-SCOPE.md)
+
+## Authorship
+
+The tagged release v1.0.0 lists Bowen Zuo as sole author. It remains unchanged and may be cited as it is. The manuscript prepared for journal submission is joint work of Bowen Zuo and Xiaojuan Luo (corresponding author), both of East China University of Science and Technology.
